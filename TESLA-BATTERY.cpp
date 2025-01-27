@@ -4,7 +4,7 @@
 #include "../datalayer/datalayer_extended.h"  //For Advanced Battery Insights webpage
 #include "../devboard/utils/events.h"
 #include "TESLA-BATTERY.h"
-///// Tesla Charge Port emulator test for early M3/MY non LFP
+///// Tesla Vehicle CAN emulator test for early M3/MY non LFP
 ///// Must use two Lilygo T-CAN485 boards, one to run the Battery emulator and the second to run the CP Emulator.
 /* Do not change code below unless you are sure what you are doing */
 /* Credits: Most of the code comes from Per Carlen's bms_comms_tesla_model3.py (https://gitlab.com/pelle8/batt2gen24/) */
@@ -993,8 +993,12 @@ int index_118 = 0;
 #endif
 
 void send_can_battery() {
-// Simulation of Tesla Charge Port Bus to HVC.
+  /*From bielec: My fist 221 message, to close the contactors is 0x41, 0x11, 0x01, 0x00, 0x00, 0x00, 0x20, 0x96 and then, 
+to cause "hv_up_for_drive" I send an additional 221 message 0x61, 0x15, 0x01, 0x00, 0x00, 0x00, 0x20, 0xBA  so 
+two 221 messages are being continuously transmitted.   When I want to shut down, I stop the second message and only send 
+the first, for a few cycles, then stop all  messages which causes the contactor to open. */
 
+  unsigned long currentMillis = millis();
 
 #if defined(TESLA_MODEL_SX_BATTERY) || defined(EXP_TESLA_BMS_DIGITAL_HVIL)
   if (datalayer.system.status.inverter_allows_contactor_closing) {
@@ -1024,130 +1028,100 @@ void send_can_battery() {
   }
 #endif
 
-  static unsigned long previousMillis10 = 0;   // will store last time a 10ms CAN Message was send
+  static unsigned long previousMillis10 = 0;  // will store last time a 30ms CAN Message was send
+  static unsigned long previousMillis30 = 0;   // will store last time a 10ms CAN Message was send
   static unsigned long previousMillis50 = 0;    // will store last time a 50ms CAN Message was send
   static unsigned long previousMillis100 = 0;   // will store last time a 100ms CAN Message was send
   static unsigned long previousMillis500 = 0;   // will store last time a 500ms CAN Message was send
   static unsigned long previousMillis1000 = 0;  // will store last time a 1000ms CAN Message was send
 
-  CAN_frame TESLA_13D = {
-      .FD = false,
-      .ext_ID = false,
-      .DLC = 6,
-      .ID = 0x13D,
-      .data = {0x05, 0x00, 0xAA, 0xA1, 0XFF, 0x01}}; // 10ms CP_chargeStatus ID317
-  CAN_frame TESLA_214 = {
-      .FD = false,
-      .ext_ID = false,
-      .DLC = 8,
-      .ID = 0x214,
-      .data = {0x09, 0x01, 0x00, 0x80, 0xA8, 0x06, 0x94, 0x33}};  // 100ms FC_status ID532
-  CAN_frame TESLA_215 = {
-      .FD = false,
-      .ext_ID = false,
-      .DLC = 1,
-      .ID = 0x215,
-      .data = {0x00}};  // 1s FC_status2 ID533
-  CAN_frame TESLA_217 = {
-      .FD = false,
-      .ext_ID = false,
-      .DLC = 8,
-      .ID = 0x217,
-      .data = {0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00}};  // 1s FC_status3 ID535
-  CAN_frame TESLA_21D = {
-      .FD = false,
-      .ext_ID = false,
-      .DLC = 8,
-      .ID = 0x21D,
-      .data = {0x3D, 0x00, 0x00, 0x0D, 0x40, 0x00, 0x20, 0x80}};  // 100ms CP_evesStatus ID541
-  CAN_frame TESLA_244 = {
-      .FD = false,
-      .ext_ID = false,
-      .DLC = 8,
-      .ID = 0x244,
-      .data = {0x23, 0x03, 0xAB, 0x06, 0xAB, 0x1A, 0xAB, 0x02}};  // 100ms FC_limits ID580
-  CAN_frame TESLA_25D = {
-      .FD = false, 
-      .ext_ID = false, 
-      .DLC = 8,
-      .ID = 0x25D, 
-      .data = {0xDB, 0x8C, 0x01, 0xB8, 0x4A, 0xC1, 0x0A, 0xE0}}; // 100ms CP_status ID605
-  CAN_frame TESLA_29D = {
-      .FD = false, 
-      .ext_ID = false, 
-      .DLC = 4, 
-      .ID = 0x29D, 
-      .data = {0xA6, 0x06, 0x82, 0x13}}; // 100ms CP_dcChargeStatus ID669
-  CAN_frame TESLA_2BD = {
-      .FD = false, 
-      .ext_ID = false, 
-      .DLC = 4, 
-      .ID = 0x2BD, 
-      .data = {0x0E, 0x02, 0x23, 0x63}}; // 100ms CP_dcPowerLimits ID701
-  CAN_frame TESLA_31E = {
-      .FD = false, 
-      .ext_ID = false, 
-      .DLC = 8, 
-      .ID = 0x31E, 
-      .data = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}}; // 1s CP_alarmMatrix ID798
-  CAN_frame TESLA_37D = {
-      .FD = false,
-      .ext_ID = false,
-      .DLC = 8,
-      .ID = 0x37D,
-      .data = {0x64, 0xFF, 0x63, 0xFF, 0x01, 0xFC, 0x07, 0x00}}; // 1s CP_thermalStatus ID893
-  CAN_frame TESLA_43D = {
-      .FD = false,
-      .ext_ID = false,
-      .DLC = 6,
-      .ID = 0x43D,
-      .data = {0x05, 0x00, 0xAA, 0x1A, 0xFF, 0x01}}; // 100ms CP_chargeStatusLog ID1085
-  CAN_frame TESLA_517 = {
-      .FD = false,
-      .ext_ID = false,
-      .DLC = 8,
-      .ID = 0x517,
-      .data = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}}; // 1s FC_identifier ID1303
-  CAN_frame TESLA_541 = {
-      .FD = false,
-      .ext_ID = false,
-      .DLC = 8,
-      .ID = 0x541,
-      .data = {0x23, 0x03, 0xAB, 0x06, 0x00, 0x00, 0x00, 0x00}}; // 100ms FC_max Limits ID1345
+CAN_frame TESLA_221_1 = {
+    .FD = false,
+    .ext_ID = false,
+    .DLC = 8,
+    .ID = 0x221,
+    .data = {0x40, 0x41, 0x05, 0x05, 0x00, 0x50, 0xF1, 0xEF}};  // 50ms ID545 VCFRONT_LVPowerState
+CAN_frame TESLA_221_2 = {
+    .FD = false,
+    .ext_ID = false,
+    .DLC = 8,
+    .ID = 0x221,
+    .data = {0x41, 0x01, 0x55, 0x00, 0x00, 0x00, 0x00, 0xBA}};  // 50ms ID545 VCFRONT_LVPowerState
+CAN_frame TESLA_2D1 = {
+    .FD = false, 
+    .ext_ID = false, 
+    .DLC = 2, 
+    .ID = 0x2D1, 
+    .data = {0x7F, 0x01}};  // 100ms ID721 VCFRONT_okToUseHighPower
+CAN_frame TESLA_3A1_1 = {
+    .FD = false,
+    .ext_ID = false,
+    .DLC = 8,
+    .ID = 0x3A1,
+    .data = {0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0xB0, 0x44}};  // 100ms ID929 VCFRONT_vehicleStatus
+CAN_frame TESLA_3A1_2 = {
+    .FD = false,
+    .ext_ID = false,
+    .DLC = 8,
+    .ID = 0x3A1,
+    .data = {0x48, 0x62, 0x49, 0x15, 0X00, 0x1C, 0xA2, 0x57}}; // 100ms ID929 VCFRONT_vehicleStatus
+CAN_frame TESLA_333 = {
+    .FD = false,
+    .ext_ID = false,
+    .DLC = 5,
+    .ID = 0x333,
+    .data = {0x84, 0x10, 0x0B, 0x06, 0x03}};  // 500ms ID819 UI_chargeRequest
+CAN_frame TESLA_1F9 = {
+    .FD = false,
+    .ext_ID = false,
+    .DLC = 1,
+    .ID = 0x1F9,
+    .data = {0x00}};  // 100ms ID505 VCSEC_requests
+CAN_frame TESLA_339 = {
+    .FD = false,
+    .ext_ID = false,
+    .DLC = 8,
+    .ID = 0x339,
+    .data = {0x5C, 0x41, 0x02, 0x00, 0x00, 0x03, 0x40, 0x03}};  // 100ms ID825 VCSEC_authentication
+CAN_frame TESLA_321 = {
+    .FD = false,
+    .ext_ID = false,
+    .DLC = 8,
+    .ID = 0x321,
+    .data = {0xE6, 0x95, 0xA7, 0x70, 0x02, 0x6A, 0xF0, 0x12}};  // 1000ms ID801 VCFRONT_sensors  
+  
+  //Send 50ms message
+  if (currentMillis - previousMillis50 >= INTERVAL_50_MS) {
+    // Check if sending of CAN messages has been delayed too much.
+    if ((currentMillis - previousMillis50 >= INTERVAL_50_MS_DELAYED) && (currentMillis > BOOTUP_TIME)) {
+      set_event(EVENT_CAN_OVERRUN, (currentMillis - previousMillis50));
+    } else {
+      clear_event(EVENT_CAN_OVERRUN);
+    }
+    previousMillis50 = currentMillis;
 
-  unsigned long currentMillis = millis();
- 
+    if (datalayer.system.status.inverter_allows_contactor_closing) {
+      transmit_can(&TESLA_221_1, can_config.battery);
+      transmit_can(&TESLA_221_2, can_config.battery);
+    }
+  }
   //Send 100ms message
   if (currentMillis - previousMillis100 >= INTERVAL_100_MS) {
     
     previousMillis100 = currentMillis;
 
-    transmit_can(&TESLA_214, can_config.battery);
-    transmit_can(&TESLA_21D, can_config.battery);
-    transmit_can(&TESLA_244, can_config.battery);
-    transmit_can(&TESLA_25D, can_config.battery);
-    transmit_can(&TESLA_29D, can_config.battery);
-    transmit_can(&TESLA_2BD, can_config.battery);
-    transmit_can(&TESLA_43D, can_config.battery);
-    transmit_can(&TESLA_541, can_config.battery);
+    transmit_can(&TESLA_2D1, can_config.battery);
+    transmit_can(&TESLA_3A1_1, can_config.battery);
+    transmit_can(&TESLA_3A1_2, can_config.battery);
+    transmit_can(&TESLA_1F9, can_config.battery);
+    transmit_can(&TESLA_339, can_config.battery);
   }
-  //Send 1000ms message
+  //Send 1s message
   if (currentMillis - previousMillis1000 >= INTERVAL_1_S) {
     
     previousMillis1000 = currentMillis;
 
-    transmit_can(&TESLA_215, can_config.battery);
-    transmit_can(&TESLA_217, can_config.battery);
-    transmit_can(&TESLA_31E, can_config.battery);
-    transmit_can(&TESLA_37D, can_config.battery);
-    transmit_can(&TESLA_517, can_config.battery);
-  }
-   //Send 10ms message
-  if (currentMillis - previousMillis10 >= INTERVAL_10_MS) {
-
-    previousMillis10 = currentMillis;
-
-    transmit_can(&TESLA_13D, can_config.battery);
+    transmit_can(&TESLA_321, can_config.battery);
   }
 
 #ifdef DOUBLE_BATTERY
@@ -1158,9 +1132,6 @@ void send_can_battery() {
 #endif  //DOUBLE_BATTERY
     }
   
-  
-
-
 void print_int_with_units(char* header, int value, char* units) {
   Serial.print(header);
   Serial.print(value);
