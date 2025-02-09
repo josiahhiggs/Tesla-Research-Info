@@ -1,4 +1,4 @@
-VERSION ""
+VERSION "JH Feb 09 2025"
 
 
 NS_ : 
@@ -33,12 +33,35 @@ NS_ :
 
 BS_:
 
-BU_: VEH CH Receiver X odin VehicleBus ui
+BU_: VEH CH Receiver X
+BU_: Receiver ChassisBus VehicleBus PartyBus
 
-
-BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
- SG_ VCFRONT_is12VBatterySupported : 0|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ EPAS3S_eacStatus : 0|3@1+ (1,0) [0|0] "" Vector__XXX
+BO_ 12 ID00CUI_status: 8 VehicleBus
+ SG_ UI_audioActive : 1|1@1+ (1,0) [0|1] ""  Receiver
+ SG_ UI_autopilotTrial : 12|2@1+ (1,0) [0|3] ""  Receiver
+ SG_ UI_bluetoothActive : 2|1@1+ (1,0) [0|1] ""  Receiver
+ SG_ UI_cameraActive : 41|1@1+ (1,0) [0|1] ""  Receiver
+ SG_ UI_cellActive : 3|1@1+ (1,0) [0|1] ""  Receiver
+ SG_ UI_cellConnected : 10|1@1+ (1,0) [0|1] ""  Receiver
+ SG_ UI_cellNetworkTechnology : 19|4@1+ (1,0) [0|15] ""  Receiver
+ SG_ UI_cellReceiverPower : 24|8@1+ (1,-128) [-128|127] "dB"  Receiver
+ SG_ UI_cellSignalBars : 42|3@1+ (1,0) [0|7] ""  Receiver
+ SG_ UI_cpuTemperature : 56|8@1- (1,40) [-20|100] "C"  Receiver
+ SG_ UI_developmentCar : 40|1@1+ (1,0) [0|1] ""  Receiver
+ SG_ UI_displayOn : 5|1@1+ (1,0) [0|1] ""  Receiver
+ SG_ UI_displayReady : 4|1@1+ (1,0) [0|1] ""  Receiver
+ SG_ UI_factoryReset : 14|2@1+ (1,0) [0|3] ""  Receiver
+ SG_ UI_falseTouchCounter : 32|8@1+ (1,0) [0|255] "1"  Receiver
+ SG_ UI_gpsActive : 16|1@1+ (1,0) [0|1] ""  Receiver
+ SG_ UI_pcbTemperature : 48|8@1- (1,40) [-20|100] "C"  Receiver
+ SG_ UI_radioActive : 18|1@1+ (1,0) [0|1] ""  Receiver
+ SG_ UI_readyForDrive : 9|1@1+ (1,0) [0|1] ""  Receiver
+ SG_ UI_screenshotActive : 17|1@1+ (1,0) [0|1] ""  Receiver
+ SG_ UI_systemActive : 8|1@1+ (1,0) [0|1] ""  Receiver
+ SG_ UI_touchActive : 0|1@1+ (1,0) [0|1] ""  Receiver
+ SG_ UI_vpnActive : 11|1@1+ (1,0) [0|1] ""  Receiver
+ SG_ UI_wifiActive : 6|1@1+ (1,0) [0|1] ""  Receiver
+ SG_ UI_wifiConnected : 7|1@1+ (1,0) [0|1] ""  Receiver
 
 BO_ 22 DI_bmsRequest: 1 VEH
  SG_ DI_bmsOpenContactorsRequest : 4|1@1+ (1,0) [0|1] ""  Receiver
@@ -172,11 +195,11 @@ BO_ 994 VCLEFT_lightStatus: 7 VEH
  SG_ VCLEFT_dynamicBrakeLightStatus : 44|2@1+ (1,0) [0|2] ""  X
  SG_ VCLEFT_fogTrailerLightStatus : 26|2@1+ (1,0) [0|3] ""  X
  SG_ VCLEFT_frontRideHeight : 28|8@1- (1,0) [-127|127] "mm"  X
- SG_ VCLEFT_leftTurnTrailerLightStatu : 18|2@1+ (1,0) [0|3] ""  X
+ SG_ VCLEFT_leftTurnTrailerLightStatus : 18|2@1+ (1,0) [0|3] ""  X
  SG_ VCLEFT_rearRideHeight : 36|8@1- (1,0) [-127|127] "mm"  X
  SG_ VCLEFT_reverseTrailerLightStatus : 49|2@1+ (1,0) [0|3] ""  X
  SG_ VCLEFT_rideHeightSensorFault : 48|1@1+ (1,0) [0|1] ""  X
- SG_ VCLEFT_rightTrnTrailerLightStatu : 20|2@1+ (1,0) [0|3] ""  X
+ SG_ VCLEFT_rightTrnTrailerLightStatus : 20|2@1+ (1,0) [0|3] ""  X
  SG_ VCLEFT_tailLightStatus : 2|2@1+ (1,0) [0|3] ""  X
  SG_ VCLEFT_tailTrailerLightStatus : 24|2@1+ (1,0) [0|3] ""  X
  SG_ VCLEFT_trailerDetected : 46|2@1+ (1,0) [0|3] ""  X
@@ -952,7 +975,7 @@ BO_ 800 BMS_alertMatrix: 8 VEH
  SG_ BMS_a089_SW_VcFront_MIA m1 : 32|1@1+ (1,0) [0|0] ""  X
  SG_ BMS_a090_SW_Gateway_MIA m1 : 33|1@1+ (1,0) [0|0] ""  X
  SG_ BMS_a091_SW_ChargePort_MIA m1 : 34|1@1+ (1,0) [0|0] ""  X
- SG_ BMS_a092_SW_ChargePort_Mia_On_Hv m1 : 35|1@1+ (1,0) [0|0] ""  X
+ SG_ BMS_a092_SW_ChargePort_Mia_On_Hvs m1 : 35|1@1+ (1,0) [0|0] ""  X
  SG_ BMS_a094_SW_Drive_Inverter_MIA m1 : 37|1@1+ (1,0) [0|0] ""  X
  SG_ BMS_a099_SW_BMB_Communication m1 : 42|1@1+ (1,0) [0|0] ""  X
  SG_ BMS_a105_SW_One_Module_Tsense m1 : 48|1@1+ (1,0) [0|0] ""  X
@@ -1067,13 +1090,12 @@ BO_ 1010 BMS_kwhCountersMultiplexed: 8 VEH
  SG_ BMS_kwhDriveDischargeTotal m3 : 8|32@1+ (0.001,0) [0|0] "KWh"  X
 
 BO_ 594 BMS_powerAvailable: 8 VEH
- SG_ BMS_hvacPowerBudget : 50|10@1+ (0.02,0) [0|0] "kW"  X
- SG_ BMS_maxDischargePower : 16|16@1+ (0.01,0) [0|0] "kW"  X
- SG_ BMS_maxRegenPower : 0|16@1+ (0.01,0) [0|0] "kW"  X
- SG_ BMS_maxStationaryHeatPower : 32|10@1+ (0.01,0) [0|0] "kW"  X
- SG_ BMS_notEnoughPowerForHeatPump : 42|1@1+ (1,0) [0|1] ""  X
- SG_ BMS_powerLimitsState : 48|1@1+ (1,0) [0|0] ""  X
- SG_ BMS_inverterTQF : 60|2@1+ (1,0) [0|3] ""  X
+ SG_ BMS_hvacPowerBudget: 50|10@1+ (0.02,0) [0|0] "kW" X
+ SG_ BMS_maxDischargePower: 16|16@1+ (0.01,0) [0|0] "kW" X
+ SG_ BMS_maxRegenPower: 0|16@1+ (0.01,0) [0|0] "kW" X
+ SG_ BMS_maxStationaryHeatPower: 32|10@1+ (0.01,0) [0|0] "kW" X
+ SG_ BMS_powerLimitsState: 48|1@1+ (1,0) [0|0] "" X
+ SG_ BMS_inverterTQF : 56|2@1+ (1,0) [0|3] "" X
 
 BO_ 658 BMS_socStatus: 8 VEH
  SG_ BMS_socMin : 0|10@1+ (0.1,0) [0|0] "%"  X
@@ -1346,9 +1368,9 @@ BO_ 1885 CP_sensorData: 8 VEH
  SG_ CP_UHF_selfTestRssi m6 : 40|8@1+ (1,0) [0|255] ""  Receiver
  SG_ CP_backCover2Counts m5 : 32|16@1+ (0.0015259,0) [0|100] "%"  Receiver
  SG_ CP_backCoverCounts m5 : 16|16@1+ (0.0015259,0) [0|100] "%"  Receiver
- SG_ CP_boardTemperature m1 : 32|8@1+ (1.2941176471,-50) [-50|280] "C"  Receiver
- SG_ CP_doorCountsDebounced m0 : 24|16@1+ (0.00152590219,0) [0|100.00000002] "%"  Receiver
- SG_ CP_doorCountsFiltered m0 : 8|16@1+ (0.00152590219,0) [0|100.00000002] "%"  Receiver
+ SG_ CP_boardTemperature m1 : 32|8@1+ (1.29411764706,-50) [-50|280.0000000003] "C"  Receiver
+ SG_ CP_doorCountsDebounced m0 : 24|16@1+ (0.00152590219,0) [0|100.00000002165] "%"  Receiver
+ SG_ CP_doorCountsFiltered m0 : 8|16@1+ (0.00152590219,0) [0|100.00000002165] "%"  Receiver
  SG_ CP_doorI m2 : 16|12@1+ (0.0025,0) [0|10.2375] "A"  Receiver
  SG_ CP_doorLastRequestMaxI m2 : 28|12@1+ (0.0025,0) [0|10.2375] "A"  Receiver
  SG_ CP_doorPot m2 : 4|12@1+ (0.025,0) [0|100] "%"  Receiver
@@ -1419,21 +1441,22 @@ BO_ 669 CP_dcChargeStatus: 4 VEH
  SG_ CP_evseOutputDcVoltage : 16|13@1+ (0.0732422,0) [0|599.927] "V"  X
 
 BO_ 583 DAS_autopilotDebug: 8 VEH
- SG_ DAS_autopilotAbortReason : 32|8@1+ (1,0) [0|255] ""  X
- SG_ DAS_behaviorReport : 16|6@1+ (1,0) [0|43] ""  X
- SG_ DAS_cameraContext : 30|2@1+ (1,0) [0|0] ""  X
- SG_ DAS_constructionZone : 23|1@1+ (1,0) [0|0] ""  X
- SG_ DAS_controlDistance : 24|6@1+ (2,0) [0|0] "m"  X
- SG_ DAS_controlTarget : 12|1@1+ (1,0) [0|0] ""  X
- SG_ DAS_controllerHealth : 22|1@1+ (1,0) [0|0] ""  X
- SG_ DAS_controllerRef : 9|3@1+ (1,0) [0|0] ""  X
- SG_ DAS_forkState : 45|5@1+ (1,0) [0|0] ""  X
- SG_ DAS_laneChangeState : 50|6@1+ (1,0) [0|0] ""  X
- SG_ DAS_lastWatchdogCode : 56|7@1+ (1,0) [0|0] ""  X
- SG_ DAS_mapAvailability : 8|1@1+ (1,0) [0|0] ""  X
- SG_ DAS_roadEstimator : 0|2@1+ (1,0) [0|0] ""  X
- SG_ DAS_arbiterBehavior : 2|3@1+ (1,0) [0|4] ""  X
- SG_ DAS_rqstedBehaviorStatus : 40|5@1+ (1,0) [0|0] ""  X
+ SG_ DAS_autopilotAbortReason: 32|8@1+ (1,0) [0|255] "" X
+ SG_ DAS_behaviorReport: 16|6@1+ (1,0) [0|43] "" X
+ SG_ DAS_cameraContext: 30|2@1+ (1,0) [0|0] "" X
+ SG_ DAS_constructionZone: 23|1@1+ (1,0) [0|0] "" X
+ SG_ DAS_controlDistance: 24|6@1+ (2,0) [0|0] "m" X
+ SG_ DAS_controlTarget: 12|1@1+ (1,0) [0|0] "" X
+ SG_ DAS_controllerHealth: 21|2@1+ (1,0) [0|0] "" X
+ SG_ DAS_controllerRef: 9|3@1+ (1,0) [0|0] "" X
+ SG_ DAS_forkState: 45|5@1+ (1,0) [0|0] "" X
+ SG_ DAS_laneChangeState: 50|6@1+ (1,0) [0|0] "" X
+ SG_ DAS_lastWatchdogCode: 56|7@1+ (1,0) [0|0] "" X
+ SG_ DAS_mapAvailability: 8|1@1+ (1,0) [0|0] "" X
+ SG_ DAS_missionPlan: 0|2@1+ (1,0) [0|0] "" X
+ SG_ DAS_roadEstimator: 0|2@1+ (1,0) [0|0] "" X
+ SG_ DAS_arbiterBehavior : 2|3@1+ (1,0) [0|4] "" X
+ SG_ DAS_rqstedBehaviorStatus: 40|5@1+ (1,0) [0|0] "" X
 
 BO_ 1001 DAS_bodyControls: 8 VEH
  SG_ DAS_bodyControlsChecksum : 56|8@1+ (1,0) [0|0] ""  X
@@ -2549,12 +2572,12 @@ BO_ 390 DIS_frontTorque: 8 VEH
  SG_ DIS_frontSlavePedalPos : 56|8@1+ (0.4,0) [0|100] "%"  X
 
 BO_ 472 DIS_torque: 8 VEH
- SG_ DIS_torqueFlags : 0|8@1+ (1,0) [0|0] ""  X
- SG_ DIS_torqueCommand : 8|15@1- (0.1,0) [0|0] "Nm"  X
- SG_ DIS_torqueActual : 24|13@1- (2,0) [0|0] "Nm"  X
- SG_ DIS_axleSpeed : 40|16@1- (0.1,0) [0|0] "RPM"  X
- SG_ DIS_torqueChecksum : 56|8@1+ (1,0) [0|0] ""  X
- SG_ DIS_torqueCounter : 37|3@1+ (1,0) [0|0] ""  X
+ SG_ DIS_torqueFlags: 0|8@1+ (1,0) [0|0] "" X
+ SG_ DIS_torqueCommand: 8|15@1- (0.1,0) [0|0] "Nm" X
+ SG_ DIS_torqueActual: 24|13@1- (2,0) [0|0] "Nm" X
+ SG_ DIS_axleSpeed: 40|16@1- (0.1,0) [0|0] "RPM" X
+ SG_ DIS_torqueChecksum: 56|8@1+ (1,0) [0|0] "" X
+ SG_ DIS_torqueCounter: 53|3@1+ (1,0) [0|0] "" X
 
 BO_ 854 DI_alertMatrix1: 8 VEH
  SG_ DI_a001_hwPhaseAgateDrive : 0|1@1+ (1,0) [0|0] ""  X
@@ -2739,7 +2762,7 @@ BO_ 859 DI_alertMatrix4: 8 VEH
  SG_ DI_a197_vdcEspWheelSaturations : 4|1@1+ (1,0) [0|0] ""  X
  SG_ DI_a198_vdcEspMCPressAndSteering : 5|1@1+ (1,0) [0|0] ""  X
  SG_ DI_a199_vdcFaulted : 6|1@1+ (1,0) [0|0] ""  X
- SG_ DI_a200_vdcModelBasedPlausibilit : 7|1@1+ (1,0) [0|0] ""  X
+ SG_ DI_a200_vdcModelBasedPlausibility : 7|1@1+ (1,0) [0|0] ""  X
  SG_ DI_a201_regenLimited : 8|1@1+ (1,0) [0|0] ""  X
  SG_ DI_a202_excessHeatUnavailable : 9|1@1+ (1,0) [0|0] ""  X
  SG_ DI_a203_TCReducedByADD : 10|1@1+ (1,0) [0|0] ""  X
@@ -2771,7 +2794,7 @@ BO_ 859 DI_alertMatrix4: 8 VEH
  SG_ DI_a229_batteryIsHeating : 36|1@1+ (1,0) [0|0] ""  X
  SG_ DI_a230_cmpMIA : 37|1@1+ (1,0) [0|0] ""  X
  SG_ DI_a231_ptcMIA : 38|1@1+ (1,0) [0|0] ""  X
- SG_ DI_a232_velocityEstimatorDegrade : 39|1@1+ (1,0) [0|0] ""  X
+ SG_ DI_a232_velocityEstimatorDegraded : 39|1@1+ (1,0) [0|0] ""  X
  SG_ DI_a233_diMsgMissed : 40|1@1+ (1,0) [0|0] ""  X
  SG_ DI_a234_pcsMIA : 41|1@1+ (1,0) [0|0] ""  X
  SG_ DI_a235_trackModeActive : 42|1@1+ (1,0) [0|0] ""  X
@@ -3152,7 +3175,7 @@ BO_ 917 DI_oilPump: 8 VEH
 
 BO_ 918 DI_frontOilPump: 8 VEH
  SG_ DI_frontOilPumpCurrent : 48|8@1+ (0.1,0) [0|0] "A"  X
- SG_ DI_frontOilPumpCurrentSensorOffs : 56|8@1+ (0.005,0) [0|0] "A"  X
+ SG_ DI_frontOilPumpCurrentSensorOffset : 56|8@1+ (0.005,0) [0|0] "A"  X
  SG_ DI_frontOilPumpFlowActual : 16|8@1+ (0.06,0) [0|0] "LPM"  X
  SG_ DI_frontOilPumpFlowTarget : 8|8@1+ (0.06,0) [0|0] "LPM"  X
  SG_ DI_frontOilPumpFluidT : 32|8@1+ (1,-40) [0|0] "DegC"  X
@@ -3391,18 +3414,18 @@ BO_ 817 EPAS3P_info: 8 VEH
  SG_ EPAS3P_infoApplicationCRC m13 : 32|32@1+ (1,0) [0|0] ""  X
 
 BO_ 883 EPAS3P_sysStatus: 8 VEH
- SG_ EPAS3P_currentTuneMode : 5|3@1+ (1,0) [0|0] ""  X
- SG_ EPAS3P_eacErrorCode : 19|4@1+ (1,0) [0|0] ""  X
- SG_ EPAS3P_eacStatus : 52|3@1+ (1,0) [0|0] ""  X
- SG_ EPAS3P_handsOnLevel : 35|2@1+ (1,0) [0|0] ""  X
- SG_ EPAS3P_internalSAS : 34|12@0+ (1,-819.2) [0|0] "deg"  X
- SG_ EPAS3P_internalSASQF : 4|1@1+ (1,0) [0|0] ""  X
- SG_ EPAS3P_steeringFault : 2|1@1+ (1,0) [0|0] ""  X
- SG_ EPAS3P_steeringRackForce : 0|10@0+ (50,-25575) [0|0] "N"  X
- SG_ EPAS3P_steeringReduced : 3|1@1+ (1,0) [0|0] ""  X
- SG_ EPAS3P_sysStatusChecksum : 56|8@1+ (1,0) [0|0] ""  X
- SG_ EPAS3P_sysStatusCounter : 48|4@1+ (1,0) [0|0] ""  X
- SG_ EPAS3P_torsionBarTorque : 16|12@0+ (0.01,-20.5) [0|0] "Nm"  X
+ SG_ EPAS3P_currentTuneMode: 5|3@1+ (1,0) [0|0] "" X
+ SG_ EPAS3P_eacErrorCode: 20|4@1+ (1,0) [0|0] "" X
+ SG_ EPAS3P_eacStatus: 53|3@1+ (1,0) [0|0] "" X
+ SG_ EPAS3P_handsOnLevel: 38|2@1+ (1,0) [0|0] "" X
+ SG_ EPAS3P_internalSAS: 32|14@0+ (0.1,-819.2) [0|0] "deg" X
+ SG_ EPAS3P_internalSASQF: 4|1@1+ (1,0) [0|0] "" X
+ SG_ EPAS3P_steeringFault: 2|1@1+ (1,0) [0|0] "" X
+ SG_ EPAS3P_steeringRackForce: 0|10@0+ (50,-25575) [0|0] "N" X
+ SG_ EPAS3P_steeringReduced: 3|1@1+ (1,0) [0|0] "" X
+ SG_ EPAS3P_sysStatusChecksum: 56|8@1+ (1,0) [0|0] "" X
+ SG_ EPAS3P_sysStatusCounter: 48|4@1+ (1,0) [0|0] "" X
+ SG_ EPAS3P_torsionBarTorque: 16|12@0+ (0.01,-20.5) [0|0] "Nm" X
 
 BO_ 913 EPAS3S_alertMatrix: 8 CH
  SG_ EPAS3S_matrixIndex M : 0|4@1+ (1,0) [0|0] ""  X
@@ -3549,17 +3572,18 @@ BO_ 785 EPAS3S_info: 8 CH
  SG_ EPAS3S_infoApplicationCRC m13 : 32|32@1+ (1,0) [0|0] ""  X
 
 BO_ 882 EPAS3S_sysStatus: 8 VEH
- SG_ EPAS3S_currentTuneMode : 5|3@1+ (1,0) [0|0] ""  X
- SG_ EPAS3S_eacErrorCode : 19|4@1+ (1,0) [0|0] ""  X
- SG_ EPAS3S_handsOnLevel : 35|2@1+ (1,0) [0|0] ""  X
- SG_ EPAS3S_internalSAS : 33|14@0+ (0.1,-819.2) [0|0] "deg"  X
- SG_ EPAS3S_internalSASQF : 4|1@1+ (1,0) [0|0] ""  X
- SG_ EPAS3S_steeringFault : 2|1@1+ (1,0) [0|0] ""  X
- SG_ EPAS3S_steeringRackForce : 0|10@0+ (50,-25575) [0|0] "N"  X
- SG_ EPAS3S_steeringReduced : 3|1@1+ (1,0) [0|0] ""  X
- SG_ EPAS3S_sysStatusChecksum : 56|8@1+ (1,0) [0|0] ""  X
- SG_ EPAS3S_sysStatusCounter : 48|4@1+ (1,0) [0|0] ""  X
- SG_ EPAS3S_torsionBarTorque : 16|12@0+ (0.01,-20.5) [0|0] "Nm"  X
+ SG_ EPAS3S_currentTuneMode: 5|3@1+ (1,0) [0|0] "" X
+ SG_ EPAS3S_eacErrorCode: 20|4@1+ (1,0) [0|0] "" X
+ SG_ EPAS3S_eacStatus: 53|3@1+ (1,0) [0|0] "" X
+ SG_ EPAS3S_handsOnLevel: 38|2@1+ (1,0) [0|0] "" X
+ SG_ EPAS3S_internalSAS: 32|14@0+ (0.1,-819.2) [0|0] "deg" X
+ SG_ EPAS3S_internalSASQF: 4|1@1+ (1,0) [0|0] "" X
+ SG_ EPAS3S_steeringFault: 2|1@1+ (1,0) [0|0] "" X
+ SG_ EPAS3S_steeringRackForce: 0|10@0+ (50,-25575) [0|0] "N" X
+ SG_ EPAS3S_steeringReduced: 3|1@1+ (1,0) [0|0] "" X
+ SG_ EPAS3S_sysStatusChecksum: 56|8@1+ (1,0) [0|0] "" X
+ SG_ EPAS3S_sysStatusCounter: 48|4@1+ (1,0) [0|0] "" X
+ SG_ EPAS3S_torsionBarTorque: 16|12@0+ (0.01,-20.5) [0|0] "Nm" X
 
 BO_ 968 EPBL_alertMatrix: 8 VEH
  SG_ EPBL_matrixIndex M : 0|4@1+ (1,0) [0|0] ""  X
@@ -4142,17 +4166,17 @@ BO_ 981 ESP_alertMatrix: 8 CH
  SG_ ESP_a263_epblStatusCounter m4 : 26|1@1+ (1,0) [0|0] ""  X
 
 BO_ 808 ESP_info: 8 VEH
- SG_ ESP_infoIndex M : 0|8@1+ (1,0) [0|0] ""  X
- SG_ ESP_infoBuildType m10 : 8|8@1+ (1,0) [0|0] ""  X
- SG_ ESP_infoComponentID m10 : 48|16@1+ (1,0) [0|0] ""  X
- SG_ ESP_infoPcbaID m11 : 16|8@1+ (1,0) [0|0] ""  X
- SG_ ESP_infoAssemblyID m11 : 24|8@1+ (1,0) [0|0] ""  X
- SG_ ESP_infoUsageID m11 : 32|16@1+ (1,0) [0|0] ""  X
- SG_ ESP_infoApplicationCRC m13 : 30|32@0+ (1,0) [0|0] ""  X
- SG_ ESP_infoVehicleVariant m16 : 16|8@1+ (1,0) [0|0] ""  X
- SG_ ESP_infoBootUdsProtoVersion m20 : 8|8@1+ (1,0) [0|0] ""  X
- SG_ ESP_infoBootloaderCRC m20 : 32|32@1+ (1,0) [0|0] ""  X
- SG_ ESP_infoVariantCRC m22 : 30|32@0+ (1,0) [0|0] ""  X
+ SG_ ESP_infoIndex M: 0|8@1+ (1,0) [0|0] "" X
+ SG_ ESP_infoBuildType m10: 8|8@1+ (1,0) [0|0] "" X
+ SG_ ESP_infoComponentID m10: 48|16@1+ (1,0) [0|0] "" X
+ SG_ ESP_infoPcbaID m11: 16|8@1+ (1,0) [0|0] "" X
+ SG_ ESP_infoAssemblyID m11: 24|8@1+ (1,0) [0|0] "" X
+ SG_ ESP_infoUsageID m11: 32|16@1+ (1,0) [0|0] "" X
+ SG_ ESP_infoApplicationCRC m13: 32|32@0+ (1,0) [0|0] "" X
+ SG_ ESP_infoVehicleVariant m16: 16|8@1+ (1,0) [0|0] "" X
+ SG_ ESP_infoBootUdsProtoVersion m20: 8|8@1+ (1,0) [0|0] "" X
+ SG_ ESP_infoBootloaderCRC m20: 32|32@1+ (1,0) [0|0] "" X
+ SG_ ESP_infoVariantCRC m22: 32|32@0+ (1,0) [0|0] "" X
 
 BO_ 325 ESP_status: 8 CH
  SG_ ESP_absBrakeEvent2 : 22|2@1+ (1,0) [0|0] ""  X
@@ -4431,24 +4455,24 @@ BO_ 888 GTW_ECall: 1 VEH
  SG_ GTW_GSM_ECALL_nLOCK : 0|1@1+ (1,0) [0|0] ""  X
 
 BO_ 274 GTW_adc1: 8 VEH
- SG_ GTW_1V1_VEH : 28|12@0+ (1,0) [0|0] "mV"  X
- SG_ GTW_1V5_VEH : 32|12@0+ (1,0) [0|0] "mV"  X
- SG_ GTW_3V3_VEH : 4|12@0+ (1.03,0) [0|0] "mV"  X
- SG_ GTW_3V3_SW : 8|12@0+ (1.5,0) [0|0] "mV"  X
- SG_ GTW_5V0_SW : 51|12@0+ (2,0) [0|0] "mV"  X
+ SG_ GTW_1V1_VEH: 24|12@0+ (1,0) [0|0] "mV" X
+ SG_ GTW_1V5_VEH: 32|12@0+ (1,0) [0|0] "mV" X
+ SG_ GTW_3V3_VEH: 0|12@0+ (1.03,0) [0|0] "mV" X
+ SG_ GTW_3V3_SW: 8|12@0+ (1.5,0) [0|0] "mV" X
+ SG_ GTW_5V0_SW: 48|12@0+ (2,0) [0|0] "mV" X
 
-BO_ 275 GTW_adc2: 8 VEH
- SG_ GTW_12V0_DISP : 24|14@0+ (11,0) [0|0] "mV"  X
- SG_ GTW_1V1_FPD : 40|12@0+ (1,0) [0|0] "mV"  X
- SG_ GTW_1V8_GSM : 20|12@0+ (1,0) [0|0] "mV"  X
- SG_ GTW_GSM_MDM_VNDR : 0|12@0+ (1,0) [0|0] "mV"  X
+BO_ 275 GTW_adc2: 7 VEH
+ SG_ GTW_12V0_DISP: 24|14@0+ (11,0) [0|0] "mV" X
+ SG_ GTW_1V1_FPD: 40|12@0+ (1,0) [0|0] "mV" X
+ SG_ GTW_1V8_GSM: 8|12@0+ (1,0) [0|0] "mV" X
+ SG_ GTW_GSM_MDM_VNDR: 0|12@0+ (1,0) [0|0] "mV" X
 
 BO_ 276 GTW_adc3: 8 VEH
- SG_ GTW_1V2_CSI : 28|12@0+ (1,0) [0|0] "mV"  X
- SG_ GTW_1V8_VID : 8|12@0+ (1,0) [0|0] "mV"  X
- SG_ GTW_1V8_VIO : 4|12@0+ (2,0) [0|0] "mV"  X
- SG_ GTW_3V3_BMP : 32|12@0+ (2,0) [0|0] "mV"  X
- SG_ GTW_GSM_BRD_REV : 52|12@0+ (1,0) [0|0] "mV"  X
+ SG_ GTW_1V2_CSI: 24|12@0+ (1,0) [0|0] "mV" X
+ SG_ GTW_1V8_VID: 8|12@0+ (1,0) [0|0] "mV" X
+ SG_ GTW_1V8_VIO: 0|12@0+ (2,0) [0|0] "mV" X
+ SG_ GTW_3V3_BMP: 32|12@0+ (2,0) [0|0] "mV" X
+ SG_ GTW_GSM_BRD_REV: 48|12@0+ (1,0) [0|0] "mV" X
 
 BO_ 62 GTW_alertMatrix: 8 VEH
  SG_ GTW_matrixIndex M : 0|4@1+ (1,0) [0|0] ""  X
@@ -4543,8 +4567,8 @@ BO_ 62 GTW_alertMatrix: 8 VEH
  SG_ GTW_w090_ocuFailed m1 : 32|1@1+ (1,0) [0|0] ""  X
  SG_ GTW_w091_lowStack m1 : 33|1@1+ (1,0) [0|0] ""  X
  SG_ GTW_w092_sdCardInvReqZero m1 : 34|1@1+ (1,0) [0|0] ""  X
- SG_ GTW_w093_sdCardInvReqOverflowBas m1 : 35|1@1+ (1,0) [0|0] ""  X
- SG_ GTW_w094_sdCardInvReqOverflowCou m1 : 36|1@1+ (1,0) [0|0] ""  X
+ SG_ GTW_w093_sdCardInvReqOverflowBase m1 : 35|1@1+ (1,0) [0|0] ""  X
+ SG_ GTW_w094_sdCardInvReqOverflowCount m1 : 36|1@1+ (1,0) [0|0] ""  X
  SG_ GTW_w095_sdCardFull m1 : 37|1@1+ (1,0) [0|0] ""  X
  SG_ GTW_w096_sdCardFatCorrupted m1 : 38|1@1+ (1,0) [0|0] ""  X
  SG_ GTW_w097_HCMLversionMismatch m1 : 39|1@1+ (1,0) [0|0] ""  X
@@ -4553,7 +4577,7 @@ BO_ 62 GTW_alertMatrix: 8 VEH
  SG_ GTW_w100_CBCversionMismatch m1 : 42|1@1+ (1,0) [0|0] ""  X
  SG_ GTW_w101_switchWatchdog m1 : 43|1@1+ (1,0) [0|0] ""  X
  SG_ GTW_w103_sdCardFormatted m1 : 44|1@1+ (1,0) [0|0] ""  X
- SG_ GTW_w104_sdCardDriverArgCorrupte m1 : 45|1@1+ (1,0) [0|0] ""  X
+ SG_ GTW_w104_sdCardDriverArgCorrupted m1 : 45|1@1+ (1,0) [0|0] ""  X
  SG_ GTW_w105_eBuckConfigured m1 : 46|1@1+ (1,0) [0|0] ""  X
  SG_ GTW_w106_failedToStartUpdater m1 : 47|1@1+ (1,0) [0|0] ""  X
 
@@ -4703,14 +4727,14 @@ BO_ 1376 GTW_factoryEcuPresent: 4 VEH
  SG_ GTW_VCRIGHTpresent : 21|1@1+ (1,0) [0|0] ""  X
  SG_ GTW_VCSECpresent : 17|1@1+ (1,0) [0|0] ""  X
 
-BO_ 2033 GTW_hrl: 8 VEH
- SG_ GTW_hrlIndex M : 0|2@1+ (1,0) [0|0] ""  X
- SG_ GTW_hrlPagesCount m1 : 8|32@0+ (1,0) [0|0] ""  X
- SG_ GTW_hrlState m2 : 2|1@1+ (1,0) [0|0] ""  X
- SG_ GTW_hrlTriggerDuration m2 : 12|16@0+ (1,0) [0|0] "seconds"  X
- SG_ GTW_hrlTriggerType m2 : 24|4@1+ (1,0) [0|0] ""  X
- SG_ GTW_hrlTriggerId m2 : 33|16@0+ (1,0) [0|0] ""  X
- SG_ GTW_hrlTriggerBus m2 : 56|3@1+ (1,0) [0|0] ""  X
+BO_ 2033 GTW_hrl: 7 VEH
+ SG_ GTW_hrlIndex M: 0|2@1+ (1,0) [0|0] "" X
+ SG_ GTW_hrlPagesCount m1: 8|32@0+ (1,0) [0|0] "" X
+ SG_ GTW_hrlState m2: 2|1@1+ (1,0) [0|0] "" X
+ SG_ GTW_hrlTriggerDuration m2: 8|16@0+ (1,0) [0|0] "seconds" X
+ SG_ GTW_hrlTriggerType m2: 24|4@1+ (1,0) [0|0] "" X
+ SG_ GTW_hrlTriggerId m2: 32|16@0+ (1,0) [0|0] "" X
+ SG_ GTW_hrlTriggerBus m2: 48|3@1+ (1,0) [0|0] "" X
 
 BO_ 60 GTW_info: 8 VEH
  SG_ GTW_infoIndex M : 0|8@1+ (1,0) [0|0] ""  X
@@ -5449,7 +5473,7 @@ BO_ 932 PCS_alertMatrix: 8 VEH
  SG_ PCS_a070_chgPfcLineDvdt m1 : 13|1@1+ (1,0) [0|0] ""  X
  SG_ PCS_a071_chgPfcILoopRationality m1 : 14|1@1+ (1,0) [0|0] ""  X
  SG_ PCS_a072_cpu2ClaStopped m1 : 15|1@1+ (1,0) [0|0] ""  X
- SG_ PCS_a073_unexpectedAcInputVoltag m1 : 16|1@1+ (1,0) [0|0] ""  X
+ SG_ PCS_a073_unexpectedAcInputVoltage m1 : 16|1@1+ (1,0) [0|0] ""  X
  SG_ PCS_a074_hvBusDischargeFailure m1 : 17|1@1+ (1,0) [0|0] ""  X
  SG_ PCS_a075_hvBusDischargeTimeout m1 : 18|1@1+ (1,0) [0|0] ""  X
  SG_ PCS_a076_dcdcEnDeassertedErr m1 : 19|1@1+ (1,0) [0|0] ""  X
@@ -5465,7 +5489,7 @@ BO_ 932 PCS_alertMatrix: 8 VEH
  SG_ PCS_a086_dcdcInsufficientCooling m1 : 29|1@1+ (1,0) [0|0] ""  X
  SG_ PCS_a087_nvramRecordStatusError m1 : 30|1@1+ (1,0) [0|0] ""  X
  SG_ PCS_a088_pchgParameters m1 : 31|1@1+ (1,0) [0|0] ""  X
- SG_ PCS_a089_hvBusDischargeIrrationa m1 : 32|1@1+ (1,0) [0|0] ""  X
+ SG_ PCS_a089_hvBusDischargeIrrational m1 : 32|1@1+ (1,0) [0|0] ""  X
 
 BO_ 612 PCS_chgLineStatus: 6 VEH
  SG_ PCS_chgAcCurrentLimit : 32|10@1+ (0.1,0) [0|0] "A"  X
@@ -5686,11 +5710,11 @@ BO_ 708 PCS_logging: 8 VEH
  SG_ PCS_dcdc12vSupportLifetimekWh m22 : 8|24@1+ (0.01,0) [0|0] "kWh"  X
 
 BO_ 676 PCS_thermalStatus: 8 VEH
- SG_ PCS_ambientTemp : 44|11@1- (0.1,40) [0|0] "C"  X
+ SG_ PCS_ambientTemp : 48|11@1- (0.1,40) [0|0] "C"  X
  SG_ PCS_chgPhATemp : 0|11@1- (0.1,40) [0|0] "C"  X
  SG_ PCS_chgPhBTemp : 11|11@1- (0.1,40) [0|0] "C"  X
- SG_ PCS_chgPhCTemp : 22|11@1- (0.1,40) [0|0] "C"  X
- SG_ PCS_dcdcTemp : 33|11@1- (0.1,40) [0|0] "C"  X
+ SG_ PCS_chgPhCTemp : 24|11@1- (0.1,40) [0|0] "C"  X
+ SG_ PCS_dcdcTemp : 35|11@1- (0.1,40) [0|0] "C"  X
 
 BO_ 900 PMS_alertMatrix1: 8 VEH
  SG_ PMS_w001_absoluteTorque : 0|1@1+ (1,0) [0|0] ""  X
@@ -6152,30 +6176,30 @@ BO_ 1359 SCCM_alertMatrix: 8 VEH
  SG_ SCCM_a023_gearStalkShortCircuit m0 : 26|1@1+ (1,0) [0|0] ""  X
  SG_ SCCM_a024_gearStalkGenErr m0 : 27|1@1+ (1,0) [0|0] ""  X
  SG_ SCCM_a025_runTimeError m0 : 28|1@1+ (1,0) [0|0] ""  X
- SG_ SCCM_a026_parkButtonInvalidSigna m0 : 29|1@1+ (1,0) [0|0] ""  X
+ SG_ SCCM_a026_parkButtonInvalidSignal m0 : 29|1@1+ (1,0) [0|0] ""  X
  SG_ SCCM_a027_parkButtonOpenCircuit m0 : 30|1@1+ (1,0) [0|0] ""  X
- SG_ SCCM_a028_parkButtonShortToGroun m0 : 31|1@1+ (1,0) [0|0] ""  X
+ SG_ SCCM_a028_parkButtonShortToGround m0 : 31|1@1+ (1,0) [0|0] ""  X
  SG_ SCCM_a029_parkButtonMalfunction m0 : 32|1@1+ (1,0) [0|0] ""  X
 
 BO_ 816 SCCM_info: 8 VEH
- SG_ SCCM_infoIndex M : 0|8@1+ (1,0) [0|0] ""  X
- SG_ SCCM_infoBuildType m10 : 8|8@1+ (1,0) [0|0] ""  X
- SG_ SCCM_infoBuildConfigId m10 : 16|16@1+ (1,0) [0|0] ""  X
- SG_ SCCM_infoHardwareId m10 : 32|16@1+ (1,0) [0|0] ""  X
- SG_ SCCM_infoComponentId m10 : 48|16@1+ (1,0) [0|0] ""  X
- SG_ SCCM_infoPcbaId m11 : 16|8@1+ (1,0) [0|0] ""  X
- SG_ SCCM_infoAssemblyId m11 : 24|8@1+ (1,0) [0|0] ""  X
- SG_ SCCM_infoUsageId m11 : 32|16@1+ (1,0) [0|0] ""  X
- SG_ SCCM_infoSubUsageId m11 : 48|16@1+ (1,0) [0|0] ""  X
- SG_ SCCM_infoPlatformType m13 : 8|8@1+ (1,0) [0|0] ""  X
- SG_ SCCM_infoAppCrc m13 : 30|32@0+ (1,0) [0|0] ""  X
- SG_ SCCM_infoBootSvnRev m14 : 8|24@1+ (1,0) [0|0] ""  X
- SG_ SCCM_infoBootSvnUrlHash m14 : 32|32@1+ (1,0) [0|0] ""  X
- SG_ SCCM_infoSubcomponent1Version m16 : 16|32@1+ (1,0) [0|0] ""  X
- SG_ SCCM_infoAppSvnHash m17 : 10|54@1+ (4,0) [0|0] ""  X
- SG_ SCCM_infoBootSvnHash m18 : 10|54@1+ (4,0) [0|0] ""  X
- SG_ SCCM_infoUdsProtoVersion m20 : 8|8@1+ (1,0) [0|0] ""  X
- SG_ SCCM_infoBootCrc m20 : 32|32@1+ (1,0) [0|0] ""  X
+ SG_ SCCM_infoIndex M: 0|8@1+ (1,0) [0|0] "" X
+ SG_ SCCM_infoBuildType m10: 8|8@1+ (1,0) [0|0] "" X
+ SG_ SCCM_infoBuildConfigId m10: 16|16@1+ (1,0) [0|0] "" X
+ SG_ SCCM_infoHardwareId m10: 32|16@1+ (1,0) [0|0] "" X
+ SG_ SCCM_infoComponentId m10: 48|16@1+ (1,0) [0|0] "" X
+ SG_ SCCM_infoPcbaId m11: 16|8@1+ (1,0) [0|0] "" X
+ SG_ SCCM_infoAssemblyId m11: 24|8@1+ (1,0) [0|0] "" X
+ SG_ SCCM_infoUsageId m11: 32|16@1+ (1,0) [0|0] "" X
+ SG_ SCCM_infoSubUsageId m11: 48|16@1+ (1,0) [0|0] "" X
+ SG_ SCCM_infoPlatformType m13: 8|8@1+ (1,0) [0|0] "" X
+ SG_ SCCM_infoAppCrc m13: 32|32@0+ (1,0) [0|0] "" X
+ SG_ SCCM_infoBootSvnRev m14: 8|24@1+ (1,0) [0|0] "" X
+ SG_ SCCM_infoBootSvnUrlHash m14: 32|32@1+ (1,0) [0|0] "" X
+ SG_ SCCM_infoSubcomponent1Version m16: 16|32@1+ (1,0) [0|0] "" X
+ SG_ SCCM_infoAppSvnHash m17: 10|54@1+ (4,0) [0|0] "" X
+ SG_ SCCM_infoBootSvnHash m18: 10|54@1+ (4,0) [0|0] "" X
+ SG_ SCCM_infoUdsProtoVersion m20: 8|8@1+ (1,0) [0|0] "" X
+ SG_ SCCM_infoBootCrc m20: 32|32@1+ (1,0) [0|0] "" X
 
 BO_ 553 SCCM_rightStalk: 3 VEH
  SG_ SCCM_rightStalkChecksum : 0|8@1+ (1,0) [0|0] ""  X
@@ -6811,8 +6835,8 @@ BO_ 291 UI_alertMatrix1: 8 VEH
  SG_ UI_a034_WakeupProblem : 33|1@1+ (1,0) [0|0] ""  X
  SG_ UI_a035_AudioWatchdogKernelError : 34|1@1+ (1,0) [0|0] ""  X
  SG_ UI_a036_AudioWatchdogHfpError : 35|1@1+ (1,0) [0|0] ""  X
- SG_ UI_a037_AudioWatchdogXrunStormEr : 36|1@1+ (1,0) [0|0] ""  X
- SG_ UI_a038_AudioWatchdogA2bI2cLocku : 37|1@1+ (1,0) [0|0] ""  X
+ SG_ UI_a037_AudioWatchdogXrunStormError : 36|1@1+ (1,0) [0|0] ""  X
+ SG_ UI_a038_AudioWatchdogA2bI2cLockupError : 37|1@1+ (1,0) [0|0] ""  X
  SG_ UI_a039_AudioA2bNeedRediscovery : 38|1@1+ (1,0) [0|0] ""  X
  SG_ UI_a040_HomelinkTransmit : 39|1@1+ (1,0) [0|0] ""  X
  SG_ UI_a041_AudioDmesgXrun : 40|1@1+ (1,0) [0|0] ""  X
@@ -7112,8 +7136,8 @@ BO_ 755 UI_hvacRequest: 5 VEH
 
 BO_ 79 UI_locationStatus: 8 CH
  SG_ UI_gpsAccuracy : 57|7@1+ (0.2,0) [0|0] "m"  X
- SG_ UI_latitude : 0|28@1- (1E-006,0) [0|0] "deg"  X
- SG_ UI_longitude : 28|29@1- (1E-006,0) [0|0] "deg"  X
+ SG_ UI_gpslatitude : 0|28@1- (1E-006,0) [0|0] "deg"  X
+ SG_ UI_gpslongitude : 28|29@1- (1E-006,0) [0|0] "deg"  X
 
 BO_ 1011 UI_odo: 3 CH
  SG_ UI_odometer : 0|24@1+ (0.1,0) [0|0] "km"  X
@@ -7343,7 +7367,7 @@ BO_ 609 VCFRONT_12VBatteryStatus: 8 VEH
  SG_ VCFRONT_IBSCurrentRaw m1 : 16|16@1- (0.005,0) [-163.84|163.835] "A"  Receiver
  SG_ VCFRONT_IBSVoltage m1 : 32|12@1+ (0.005443676098,0) [0|22.291853621] "V"  Receiver
  SG_ VCFRONT_IBSAmpHours m2 : 2|14@1- (0.01,0) [-81.92|81.91] "Ah"  Receiver
- SG_ VCFRONT_IBSTemperature m2 : 23|16@0- (0.1,0) [-327.68|327.66] "degC"  Receiver
+ SG_ VCFRONT_IBSTemperature m2 : 8|16@0- (0.1,0) [-327.68|327.66] "degC"  Receiver
 
 BO_ 545 VCFRONT_LVPowerState: 8 VEH
  SG_ VCFRONT_LVPowerStateChecksum : 56|8@1+ (1,0) [0|0] ""  X
@@ -7492,7 +7516,7 @@ BO_ 832 VCFRONT_alertMatrix: 8 VEH
  SG_ VCFRONT_a192_criticalLoadShed m3 : 15|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a193_mcuAudioRetry m3 : 16|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a194_iBoosterRetry m3 : 17|1@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_a195_drveBlckdVltgeTooHg m3 : 18|1@1+ (1,0) [0|0] ""  X
+ SG_ VCFRONT_a195_drveBlckdVltgeTooHgh m3 : 18|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a196_discnctd12VBattery m3 : 19|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a198_PRVCANOverterminate m3 : 21|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a199_PRVCANUndertrminate m3 : 22|1@1+ (1,0) [0|0] ""  X
@@ -7501,9 +7525,9 @@ BO_ 832 VCFRONT_alertMatrix: 8 VEH
  SG_ VCFRONT_a202_pcsSelfTestFail m3 : 25|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a203_epas3pSelfTestFail m3 : 26|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a204_epas3sSelfTestFail m3 : 27|1@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_a205_iBoosterSelfTestFai m3 : 28|1@1+ (1,0) [0|0] ""  X
+ SG_ VCFRONT_a205_iBoosterSelfTestFail m3 : 28|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a206_espSelfTestFail m3 : 29|1@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_a207_vbatFusdSelfTestFai m3 : 30|1@1+ (1,0) [0|0] ""  X
+ SG_ VCFRONT_a207_vbatFusdSelfTestFail m3 : 30|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a208_brakeFluidLow m3 : 31|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a209_brakeFluidSNA m3 : 32|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a210_fiveWayValveCalib m3 : 33|1@1+ (1,0) [0|0] ""  X
@@ -7518,16 +7542,16 @@ BO_ 832 VCFRONT_alertMatrix: 8 VEH
  SG_ VCFRONT_a222_rightTurnLightFault m3 : 45|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a223_12VTempSensDiscnect m3 : 46|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a224_revBatChrgPmpFault m3 : 47|1@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_a225_driveBlckdByShowroo m3 : 48|1@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_a226_railAPoweredForFrun m3 : 49|1@1+ (1,0) [0|0] ""  X
+ SG_ VCFRONT_a225_driveBlckdByShowroom m3 : 48|1@1+ (1,0) [0|0] ""  X
+ SG_ VCFRONT_a226_railAPoweredForFrunk m3 : 49|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a228_pumpBatFbkSanity m3 : 51|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a229_pumpPtFbkSanity m3 : 52|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a230_thmlFanFbkSanity m3 : 53|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a231_12VTempSensShort m3 : 54|1@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_a233_autopilot1EFuseFaul m3 : 56|1@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_a234_autopilot2EFuseFaul m3 : 57|1@1+ (1,0) [0|0] ""  X
+ SG_ VCFRONT_a233_autopilot1EFuseFault m3 : 56|1@1+ (1,0) [0|0] ""  X
+ SG_ VCFRONT_a234_autopilot2EFuseFault m3 : 57|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a235_ptTempSnsIrrational m3 : 58|1@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_a236_batTempSnsIrrationa m3 : 59|1@1+ (1,0) [0|0] ""  X
+ SG_ VCFRONT_a236_batTempSnsIrrational m3 : 59|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a237_pumpBatChipComms m3 : 60|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a238_pumpPtChipComms m3 : 61|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a239_thmlFanChipComms m3 : 62|1@1+ (1,0) [0|0] ""  X
@@ -7540,14 +7564,14 @@ BO_ 832 VCFRONT_alertMatrix: 8 VEH
  SG_ VCFRONT_a249_fiveWayValveBadMode m4 : 12|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a250_headlampsNotAimed m4 : 13|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a251_UIWakeupTrigger m4 : 14|1@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_a252_frontControllerWake m4 : 15|1@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_a253_maxChrgeSssionTmeou m4 : 16|1@1+ (1,0) [0|0] ""  X
+ SG_ VCFRONT_a252_frontControllerWakeup m4 : 15|1@1+ (1,0) [0|0] ""  X
+ SG_ VCFRONT_a253_maxChrgeSssionTmeout m4 : 16|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a254_pumpBatStopped m4 : 17|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a255_pumpPtStopped m4 : 18|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a256_compTornShaftSeal m4 : 19|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_a257_portExpanderVOR m4 : 20|1@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_a258_resistanceEstimatio m4 : 21|1@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_a259_12vVoltageDropOnHig m4 : 22|1@1+ (1,0) [0|0] ""  X
+ SG_ VCFRONT_a258_resistanceEstimationRun m4 : 21|1@1+ (1,0) [0|0] ""  X
+ SG_ VCFRONT_a259_12vVoltageDropOnHighLoadCurrent m4 : 22|1@1+ (1,0) [0|0] ""  X
 
 BO_ 577 VCFRONT_coolant: 7 VEH
  SG_ VCFRONT_coolantAirPurgeBatState : 48|3@1+ (1,0) [0|0] ""  X
@@ -7956,7 +7980,7 @@ BO_ 897 VCFRONT_logging1Hz: 8 VEH
  SG_ VCFRONT_totalLoadCoolingDominant m9 : 58|1@1+ (1,0) [0|1] ""  Receiver
  SG_ VCFRONT_wiperCycles m18 : 48|16@1+ (100,0) [0|6553500] "Cycles"  Receiver
 
-BO_ 721 VCFRONT_okToUseHighPower: 1 VEH
+BO_ 721 VCFRONT_okToUseHighPower: 2 VEH
  SG_ VCFRONT_cpOkToUseHighPower : 6|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_das1OkToUseHighPower : 2|1@1+ (1,0) [0|0] ""  X
  SG_ VCFRONT_das2OkToUseHighPower : 3|1@1+ (1,0) [0|0] ""  X
@@ -8052,29 +8076,31 @@ BO_ 737 VCFRONT_status: 8 VEH
  SG_ VCFRONT_wiperState m0 : 16|4@1+ (1,0) [0|12] ""  X
 
 BO_ 929 VCFRONT_vehicleStatus: 8 VEH
- SG_ VCFRONT_12vStatusForDrive : 14|2@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_2RowCenterUnbuckled : 38|2@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_2RowLeftUnbuckled : 36|2@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_2RowRightUnbuckled : 40|2@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_APGlassHeaterState : 2|3@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_LVLoadRequest : 9|1@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_batterySupportRequest : 27|1@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_bmsHvChargeEnable : 0|1@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_diPowerOnState : 10|3@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_driverBuckleStatus : 30|1@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_driverDoorStatus : 31|1@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_driverIsLeaving : 28|1@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_driverIsLeavingAnySpeed : 13|1@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_driverUnbuckled : 32|2@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_ota12VSupportRequest : 29|1@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_passengerUnbuckled : 34|2@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_pcs12vVoltageTarget : 16|11@1+ (0.01,0) [0|0] "V"  X
- SG_ VCFRONT_pcsEFuseVoltage : 42|10@1+ (0.1,0) [0|0] "V"  X
- SG_ VCFRONT_preconditionRequest : 1|1@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_standbySupplySupported : 6|1@1+ (1,0) [0|1] ""  X
- SG_ VCFRONT_thermalSystemType : 5|1@1+ (1,0) [0|1] ""  X
- SG_ VCFRONT_vehicleStatusChecksum : 56|8@1+ (1,0) [0|0] ""  X
- SG_ VCFRONT_vehicleStatusCounter : 52|4@1+ (1,0) [0|0] ""  X
+ SG_ VCFRONT_12vStatusForDrive: 14|2@1+ (1,0) [0|0] "" X
+ SG_ VCFRONT_2RowCenterUnbuckled: 38|2@1+ (1,0) [0|0] "" X
+ SG_ VCFRONT_2RowLeftUnbuckled: 36|2@1+ (1,0) [0|0] "" X
+ SG_ VCFRONT_2RowRightUnbuckled: 40|2@1+ (1,0) [0|0] "" X
+ SG_ VCFRONT_APGlassHeaterState: 2|3@1+ (1,0) [0|0] "" X
+ SG_ VCFRONT_LVLoadRequest: 9|1@1+ (1,0) [0|0] "" X
+ SG_ VCFRONT_batterySupportRequest: 27|1@1+ (1,0) [0|0] "" X
+ SG_ VCFRONT_bmsHvChargeEnable: 0|1@1+ (1,0) [0|0] "" X
+ SG_ VCFRONT_diPowerOnState: 10|3@1+ (1,0) [0|0] "" X
+ SG_ VCFRONT_driverBuckleStatus: 30|1@1+ (1,0) [0|0] "" X
+ SG_ VCFRONT_driverDoorStatus: 31|1@1+ (1,0) [0|0] "" X
+ SG_ VCFRONT_driverIsLeaving: 28|1@1+ (1,0) [0|0] "" X
+ SG_ VCFRONT_driverIsLeavingAnySpeed: 13|1@1+ (1,0) [0|0] "" X
+ SG_ VCFRONT_driverUnbuckled: 32|2@1+ (1,0) [0|0] "" X
+ SG_ VCFRONT_is12VBatterySupported: 5|1@1+ (1,0) [0|0] "" X
+ SG_ VCFRONT_ota12VSupportRequest: 29|1@1+ (1,0) [0|0] "" X
+ SG_ VCFRONT_passengerUnbuckled: 34|2@1+ (1,0) [0|0] "" X
+ SG_ VCFRONT_pcs12vVoltageTarget: 16|11@1+ (0.01,0) [0|0] "V" X
+ SG_ VCFRONT_pcsEFuseVoltage: 42|10@1+ (0.1,0) [0|0] "V" X
+ SG_ VCFRONT_preconditionRequest: 1|1@1+ (1,0) [0|0] "" X
+ SG_ VCFRONT_standbySupplySupported : 6|1@1+ (1,0) [0|1] "" X
+ SG_ VCFRONT_thermalSystemType : 5|1@1+ (1,0) [0|1] "" X
+ SG_ VCFRONT_vehicleStatusChecksum: 56|8@1+ (1,0) [0|0] "" X
+ SG_ VCFRONT_vehicleStatusCounter: 52|4@1+ (1,0) [0|0] "" X
+
 
 BO_ 864 VCLEFT_alertMatrix: 8 VEH
  SG_ VCLEFT_matrixIndex M : 0|4@1+ (1,0) [0|0] ""  X
@@ -8247,17 +8273,17 @@ BO_ 864 VCLEFT_alertMatrix: 8 VEH
  SG_ VCLEFT_a285_blowerChipComms m4 : 48|1@1+ (1,0) [0|0] ""  X
  SG_ VCLEFT_a286_windowSpeedInvalidF m4 : 49|1@1+ (1,0) [0|0] ""  X
  SG_ VCLEFT_a287_windowSpeedInvalidR m4 : 50|1@1+ (1,0) [0|0] ""  X
- SG_ VCLEFT_a290_occupancyFaultedFron m4 : 53|1@1+ (1,0) [0|0] ""  X
+ SG_ VCLEFT_a290_occupancyFaultedFront m4 : 53|1@1+ (1,0) [0|0] ""  X
  SG_ VCLEFT_a291_buckleFaultedFront m4 : 54|1@1+ (1,0) [0|0] ""  X
- SG_ VCLEFT_a292_occupancyFaultedRear m4 : 55|1@1+ (1,0) [0|0] ""  X
- SG_ VCLEFT_a293_occupancyFaultedRear m4 : 56|1@1+ (1,0) [0|0] ""  X
- SG_ VCLEFT_a294_occupancyFaultedRear m4 : 57|1@1+ (1,0) [0|0] ""  X
+ SG_ VCLEFT_a292_occupancyFaultedRearL m4 : 55|1@1+ (1,0) [0|0] ""  X
+ SG_ VCLEFT_a293_occupancyFaultedRearC m4 : 56|1@1+ (1,0) [0|0] ""  X
+ SG_ VCLEFT_a294_occupancyFaultedRearR m4 : 57|1@1+ (1,0) [0|0] ""  X
  SG_ VCLEFT_a295_buckleFaultedRearL m4 : 58|1@1+ (1,0) [0|0] ""  X
  SG_ VCLEFT_a300_swcUnderVoltage m4 : 63|1@1+ (1,0) [0|0] ""  X
  SG_ VCLEFT_a301_swcOverVoltage m5 : 4|1@1+ (1,0) [0|0] ""  X
  SG_ VCLEFT_a302_blowerGeneralFault m5 : 5|1@1+ (1,0) [0|0] ""  X
  SG_ VCLEFT_a303_eFuseMgmtWindowLift m5 : 6|1@1+ (1,0) [0|0] ""  X
- SG_ VCLEFT_a304_frontIntHandleShorte m5 : 7|1@1+ (1,0) [0|0] ""  X
+ SG_ VCLEFT_a304_frontIntHandleShorted m5 : 7|1@1+ (1,0) [0|0] ""  X
  SG_ VCLEFT_a305_rearIntHandleShorted m5 : 8|1@1+ (1,0) [0|0] ""  X
  SG_ VCLEFT_a306_handleDisconnectedF m5 : 9|1@1+ (1,0) [0|0] ""  X
  SG_ VCLEFT_a307_handleDisconnectedR m5 : 10|1@1+ (1,0) [0|0] ""  X
@@ -8603,10 +8629,10 @@ BO_ 960 VCRIGHT_alertMatrix: 8 VEH
  SG_ VCRIGHT_a170_windowCurrentPeakR m2 : 53|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a172_SPI_MIA m2 : 55|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a174_BLERightPowerCycled m2 : 57|1@1+ (1,0) [0|0] ""  X
- SG_ VCRIGHT_a180_frontDoorLatchRehom m2 : 63|1@1+ (1,0) [0|0] ""  X
+ SG_ VCRIGHT_a180_frontDoorLatchRehome m2 : 63|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a181_rearDoorLatchRehome m3 : 4|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a182_emergencyLatchRel m3 : 5|1@1+ (1,0) [0|0] ""  X
- SG_ VCRIGHT_a183_doorStateFactoryTes m3 : 6|1@1+ (1,0) [0|0] ""  X
+ SG_ VCRIGHT_a183_doorStateFactoryTest m3 : 6|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a184_trunkFailedOpening m3 : 7|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a185_summonAborted m3 : 8|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a186_latchReleaseFailedF m3 : 9|1@1+ (1,0) [0|0] ""  X
@@ -8638,7 +8664,7 @@ BO_ 960 VCRIGHT_alertMatrix: 8 VEH
  SG_ VCRIGHT_a212_epbmOverIStaticNew m3 : 35|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a213_epbmUnderIDynNew m3 : 36|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a214_epbmOverIDynNew m3 : 37|1@1+ (1,0) [0|0] ""  X
- SG_ VCRIGHT_a215_currentDesyncWarnin m3 : 38|1@1+ (1,0) [0|0] ""  X
+ SG_ VCRIGHT_a215_currentDesyncWarning m3 : 38|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a216_SPI_MIA_debugData1 m3 : 39|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a217_SPI_MIA_debugData2 m3 : 40|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a218_motorDriverFault m3 : 41|1@1+ (1,0) [0|0] ""  X
@@ -8689,7 +8715,7 @@ BO_ 960 VCRIGHT_alertMatrix: 8 VEH
  SG_ VCRIGHT_a264_seatBackStallDebug m4 : 27|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a265_seatTiltStallDebug m4 : 28|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a266_seatLiftStallDebug m4 : 29|1@1+ (1,0) [0|0] ""  X
- SG_ VCRIGHT_a267_seatTrackHCEncStlDb m4 : 30|1@1+ (1,0) [0|0] ""  X
+ SG_ VCRIGHT_a267_seatTrackHCEncStlDbg m4 : 30|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a268_seatBackHCEncStlDbg m4 : 31|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a269_seatTiltHCEncStlDbg m4 : 32|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a270_seatLiftHCEncStlDbg m4 : 33|1@1+ (1,0) [0|0] ""  X
@@ -8699,19 +8725,19 @@ BO_ 960 VCRIGHT_alertMatrix: 8 VEH
  SG_ VCRIGHT_a274_handleStuckActiveR m4 : 37|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a275_rightTurnLightFault m4 : 38|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a276_mirrorDebug m4 : 39|1@1+ (1,0) [0|0] ""  X
- SG_ VCRIGHT_a277_BLERightUnderVoltag m4 : 40|1@1+ (1,0) [0|0] ""  X
+ SG_ VCRIGHT_a277_BLERightUnderVoltage m4 : 40|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a280_latchDidNotDisarmF m4 : 43|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a281_latchDidNotDisarmR m4 : 44|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a282_latchUnexpectedArmF m4 : 45|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a283_latchUnexpectedArmR m4 : 46|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a286_windowSpeedInvalidF m4 : 49|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a287_windowSpeedInvalidR m4 : 50|1@1+ (1,0) [0|0] ""  X
- SG_ VCRIGHT_a290_occupancyFaultedFro m4 : 53|1@1+ (1,0) [0|0] ""  X
+ SG_ VCRIGHT_a290_occupancyFaultedFront m4 : 53|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a291_buckleFaultedFront m4 : 54|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a292_buckleFaultedRearC m4 : 55|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a293_buckleFaultedRearR m4 : 56|1@1+ (1,0) [0|0] ""  X
- SG_ VCRIGHT_a304_frontIntHandleShort m5 : 7|1@1+ (1,0) [0|0] ""  X
- SG_ VCRIGHT_a305_rearIntHandleShorte m5 : 8|1@1+ (1,0) [0|0] ""  X
+ SG_ VCRIGHT_a304_frontIntHandleShorted m5 : 7|1@1+ (1,0) [0|0] ""  X
+ SG_ VCRIGHT_a305_rearIntHandleShorted m5 : 8|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a306_handleDisconnectedF m5 : 9|1@1+ (1,0) [0|0] ""  X
  SG_ VCRIGHT_a307_handleDisconnectedR m5 : 10|1@1+ (1,0) [0|0] ""  X
 
@@ -8804,7 +8830,7 @@ BO_ 915 ID393VCRIGHT_epbmDebug: 8 VEH
  SG_ VCRIGHT_summonInitAllowed m1 : 15|1@1+ (1,0) [0|1] ""  Receiver
  SG_ VCRIGHT_summonUnavailableAllowed m1 : 22|1@1+ (1,0) [0|1] ""  Receiver
 
-BO_ 579 ID243VCRIGHT_hvacStatus: 8 VEH
+BO_ 579 ID243VCRIGHT_hvacStatus: 8 VehicleBus
  SG_ VCRIGHT_hvacStatusIndex M : 0|2@1+ (1,0) [0|3] ""  Receiver
  SG_ VCRIGHT_hvacACRunning m0 : 50|1@1+ (1,0) [0|1] ""  Receiver
  SG_ VCRIGHT_hvacAirDistributionMode m0 : 41|3@1+ (1,0) [0|7] ""  Receiver
@@ -8812,6 +8838,7 @@ BO_ 579 ID243VCRIGHT_hvacStatus: 8 VEH
  SG_ VCRIGHT_hvacCabinTempEst m0 : 30|11@1+ (0.1,-40) [-40|164] "C"  Receiver
  SG_ VCRIGHT_hvacDuctTargetLeft m1 : 48|8@1+ (0.5,-40) [-40|80] "C"  Receiver
  SG_ VCRIGHT_hvacDuctTargetRight m1 : 56|8@1+ (0.5,-40) [-40|80] "C"  Receiver
+ SG_ VCRIGHT_hvacEvapInletTempEstimat m2 : 19|10@1+ (0.13,-40) [-40|90] "C"  Receiver
  SG_ VCRIGHT_hvacMassflowRefrigSystem m1 : 2|8@1+ (1,0) [0|250] "g/s"  Receiver
  SG_ VCRIGHT_hvacModelInitStatus m0 : 60|3@1+ (1,0) [0|5] ""  Receiver
  SG_ VCRIGHT_hvacOverheatProtActive m0 : 63|1@1+ (1,0) [0|1] ""  Receiver
@@ -9201,16 +9228,16 @@ BO_ 1017 VCSEC_alertMatrix: 8 VEH
  SG_ VCSEC_a177_whitelistAddedKey m2 : 60|1@1+ (1,0) [0|0] ""  X
  SG_ VCSEC_a178_whitelistRemovedKey m2 : 61|1@1+ (1,0) [0|0] ""  X
  SG_ VCSEC_a179_wlistAddedPermission m2 : 62|1@1+ (1,0) [0|0] ""  X
- SG_ VCSEC_a180_wlistRemovedPermissio m2 : 63|1@1+ (1,0) [0|0] ""  X
+ SG_ VCSEC_a180_wlistRemovedPermission m2 : 63|1@1+ (1,0) [0|0] ""  X
  SG_ VCSEC_a181_signedMessageFault m3 : 4|1@1+ (1,0) [0|0] ""  X
  SG_ VCSEC_a182_cryptoHighStackUsage m3 : 5|1@1+ (1,0) [0|0] ""  X
  SG_ VCSEC_a183_centerEndpointRFMia m3 : 6|1@1+ (1,0) [0|0] ""  X
  SG_ VCSEC_a184_driverEndpointRFMia m3 : 7|1@1+ (1,0) [0|0] ""  X
- SG_ VCSEC_a185_passengerEndpointRFMi m3 : 8|1@1+ (1,0) [0|0] ""  X
+ SG_ VCSEC_a185_passengerEndpointRFMia m3 : 8|1@1+ (1,0) [0|0] ""  X
  SG_ VCSEC_a186_rearEndpointRFMia m3 : 9|1@1+ (1,0) [0|0] ""  X
  SG_ VCSEC_a187_badConnectionDropped m3 : 10|1@1+ (1,0) [0|0] ""  X
  SG_ VCSEC_a188_protobufDecodeError m3 : 11|1@1+ (1,0) [0|0] ""  X
- SG_ VCSEC_a189_protoExpLengthTooLarg m3 : 12|1@1+ (1,0) [0|0] ""  X
+ SG_ VCSEC_a189_protoExpLengthTooLarge m3 : 12|1@1+ (1,0) [0|0] ""  X
  SG_ VCSEC_a190_protoTooManyBytes m3 : 13|1@1+ (1,0) [0|0] ""  X
  SG_ VCSEC_a191_macIDWlistingFailedC m3 : 14|1@1+ (1,0) [0|0] ""  X
  SG_ VCSEC_a192_macIDWlistingFailedL m3 : 15|1@1+ (1,0) [0|0] ""  X
@@ -9221,7 +9248,7 @@ BO_ 1017 VCSEC_alertMatrix: 8 VEH
  SG_ VCSEC_a197_indicationFault m3 : 20|1@1+ (1,0) [0|0] ""  X
  SG_ VCSEC_a198_BPillarNFCReaderMIA m3 : 21|1@1+ (1,0) [0|0] ""  X
  SG_ VCSEC_a199_CenterNFCReaderMIA m3 : 22|1@1+ (1,0) [0|0] ""  X
- SG_ VCSEC_a200_centerEndpointLostCom m3 : 23|1@1+ (1,0) [0|0] ""  X
+ SG_ VCSEC_a200_centerEndpointLostComm m3 : 23|1@1+ (1,0) [0|0] ""  X
  SG_ VCSEC_a201_leftEndpointLostComm m3 : 24|1@1+ (1,0) [0|0] ""  X
  SG_ VCSEC_a202_rightEndpointLostComm m3 : 25|1@1+ (1,0) [0|0] ""  X
  SG_ VCSEC_a203_rearEndpointLostComm m3 : 26|1@1+ (1,0) [0|0] ""  X
@@ -9230,7 +9257,7 @@ BO_ 1017 VCSEC_alertMatrix: 8 VEH
  SG_ VCSEC_a206_BLELeftAssertFailure m3 : 29|1@1+ (1,0) [0|0] ""  X
  SG_ VCSEC_a207_BLERightAssertFailure m3 : 30|1@1+ (1,0) [0|0] ""  X
  SG_ VCSEC_a208_BLERearAssertFailure m3 : 31|1@1+ (1,0) [0|0] ""  X
- SG_ VCSEC_a209_BLECenterAssertFailur m3 : 32|1@1+ (1,0) [0|0] ""  X
+ SG_ VCSEC_a209_BLECenterAssertFailure m3 : 32|1@1+ (1,0) [0|0] ""  X
 
 BO_ 825 VCSEC_authentication: 8 VEH
  SG_ VCSEC_MCUCommandType : 36|3@1+ (1,0) [0|0] ""  X
@@ -9849,51 +9876,51 @@ BA_ "GenMsgSendType" BO_ 793 0;
 BA_ "GenMsgCycleTime" BO_ 793 1000;
 BA_ "GenMsgSendType" BO_ 505 0;
 BA_ "GenMsgCycleTime" BO_ 505 100;
-BA_ "SystemSignalLongSymbol" SG_ 994 VCLEFT_leftTurnTrailerLightStatu "VCLEFT_leftTurnTrailerLightStatus";
-BA_ "SystemSignalLongSymbol" SG_ 994 VCLEFT_rightTrnTrailerLightStatu "VCLEFT_rightTrnTrailerLightStatus";
-BA_ "SystemSignalLongSymbol" SG_ 800 BMS_a092_SW_ChargePort_Mia_On_Hv "BMS_a092_SW_ChargePort_Mia_On_Hvs";
-BA_ "SystemSignalLongSymbol" SG_ 859 DI_a200_vdcModelBasedPlausibilit "DI_a200_vdcModelBasedPlausibility";
-BA_ "SystemSignalLongSymbol" SG_ 859 DI_a232_velocityEstimatorDegrade "DI_a232_velocityEstimatorDegraded";
+BA_ "SystemSignalLongSymbol" SG_ 994 VCLEFT_leftTurnTrailerLightStatus "VCLEFT_leftTurnTrailerLightStatus";
+BA_ "SystemSignalLongSymbol" SG_ 994 VCLEFT_rightTrnTrailerLightStatus "VCLEFT_rightTrnTrailerLightStatus";
+BA_ "SystemSignalLongSymbol" SG_ 800 BMS_a092_SW_ChargePort_Mia_On_Hvs "BMS_a092_SW_ChargePort_Mia_On_Hvs";
+BA_ "SystemSignalLongSymbol" SG_ 859 DI_a200_vdcModelBasedPlausibility "DI_a200_vdcModelBasedPlausibility";
+BA_ "SystemSignalLongSymbol" SG_ 859 DI_a232_velocityEstimatorDegraded "DI_a232_velocityEstimatorDegraded";
 BA_ "SystemSignalLongSymbol" SG_ 918 DI_frontOilPumpCurrentSensorOffs "DI_frontOilPumpCurrentSensorOffset";
-BA_ "SystemSignalLongSymbol" SG_ 62 GTW_w093_sdCardInvReqOverflowBas "GTW_w093_sdCardInvReqOverflowBase";
-BA_ "SystemSignalLongSymbol" SG_ 62 GTW_w094_sdCardInvReqOverflowCou "GTW_w094_sdCardInvReqOverflowCount";
-BA_ "SystemSignalLongSymbol" SG_ 62 GTW_w104_sdCardDriverArgCorrupte "GTW_w104_sdCardDriverArgCorrupted";
-BA_ "SystemSignalLongSymbol" SG_ 932 PCS_a073_unexpectedAcInputVoltag "PCS_a073_unexpectedAcInputVoltage";
-BA_ "SystemSignalLongSymbol" SG_ 932 PCS_a089_hvBusDischargeIrrationa "PCS_a089_hvBusDischargeIrrational";
-BA_ "SystemSignalLongSymbol" SG_ 1359 SCCM_a026_parkButtonInvalidSigna "SCCM_a026_parkButtonInvalidSignal";
-BA_ "SystemSignalLongSymbol" SG_ 1359 SCCM_a028_parkButtonShortToGroun "SCCM_a028_parkButtonShortToGround";
-BA_ "SystemSignalLongSymbol" SG_ 291 UI_a037_AudioWatchdogXrunStormEr "UI_a037_AudioWatchdogXrunStormError";
-BA_ "SystemSignalLongSymbol" SG_ 291 UI_a038_AudioWatchdogA2bI2cLocku "UI_a038_AudioWatchdogA2bI2cLockupError";
-BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a195_drveBlckdVltgeTooHg "VCFRONT_a195_drveBlckdVltgeTooHgh";
-BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a205_iBoosterSelfTestFai "VCFRONT_a205_iBoosterSelfTestFail";
-BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a207_vbatFusdSelfTestFai "VCFRONT_a207_vbatFusdSelfTestFail";
-BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a225_driveBlckdByShowroo "VCFRONT_a225_driveBlckdByShowroom";
-BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a226_railAPoweredForFrun "VCFRONT_a226_railAPoweredForFrunk";
-BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a233_autopilot1EFuseFaul "VCFRONT_a233_autopilot1EFuseFault";
-BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a234_autopilot2EFuseFaul "VCFRONT_a234_autopilot2EFuseFault";
-BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a236_batTempSnsIrrationa "VCFRONT_a236_batTempSnsIrrational";
-BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a252_frontControllerWake "VCFRONT_a252_frontControllerWakeup";
-BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a253_maxChrgeSssionTmeou "VCFRONT_a253_maxChrgeSssionTmeout";
-BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a258_resistanceEstimatio "VCFRONT_a258_resistanceEstimationRun";
-BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a259_12vVoltageDropOnHig "VCFRONT_a259_12vVoltageDropOnHighLoadCurrent";
-BA_ "SystemSignalLongSymbol" SG_ 864 VCLEFT_a290_occupancyFaultedFron "VCLEFT_a290_occupancyFaultedFront";
-BA_ "SystemSignalLongSymbol" SG_ 864 VCLEFT_a292_occupancyFaultedRear "VCLEFT_a292_occupancyFaultedRearL";
-BA_ "SystemSignalLongSymbol" SG_ 864 VCLEFT_a293_occupancyFaultedRear "VCLEFT_a293_occupancyFaultedRearC";
-BA_ "SystemSignalLongSymbol" SG_ 864 VCLEFT_a294_occupancyFaultedRear "VCLEFT_a294_occupancyFaultedRearR";
-BA_ "SystemSignalLongSymbol" SG_ 864 VCLEFT_a304_frontIntHandleShorte "VCLEFT_a304_frontIntHandleShorted";
-BA_ "SystemSignalLongSymbol" SG_ 960 VCRIGHT_a180_frontDoorLatchRehom "VCRIGHT_a180_frontDoorLatchRehome";
-BA_ "SystemSignalLongSymbol" SG_ 960 VCRIGHT_a183_doorStateFactoryTes "VCRIGHT_a183_doorStateFactoryTest";
-BA_ "SystemSignalLongSymbol" SG_ 960 VCRIGHT_a215_currentDesyncWarnin "VCRIGHT_a215_currentDesyncWarning";
-BA_ "SystemSignalLongSymbol" SG_ 960 VCRIGHT_a267_seatTrackHCEncStlDb "VCRIGHT_a267_seatTrackHCEncStlDbg";
-BA_ "SystemSignalLongSymbol" SG_ 960 VCRIGHT_a277_BLERightUnderVoltag "VCRIGHT_a277_BLERightUnderVoltage";
-BA_ "SystemSignalLongSymbol" SG_ 960 VCRIGHT_a290_occupancyFaultedFro "VCRIGHT_a290_occupancyFaultedFront";
-BA_ "SystemSignalLongSymbol" SG_ 960 VCRIGHT_a304_frontIntHandleShort "VCRIGHT_a304_frontIntHandleShorted";
+BA_ "SystemSignalLongSymbol" SG_ 62 GTW_w093_sdCardInvReqOverflowBase "GTW_w093_sdCardInvReqOverflowBase";
+BA_ "SystemSignalLongSymbol" SG_ 62 GTW_w094_sdCardInvReqOverflowCount "GTW_w094_sdCardInvReqOverflowCount";
+BA_ "SystemSignalLongSymbol" SG_ 62 GTW_w104_sdCardDriverArgCorrupted "GTW_w104_sdCardDriverArgCorrupted";
+BA_ "SystemSignalLongSymbol" SG_ 932 PCS_a073_unexpectedAcInputVoltage "PCS_a073_unexpectedAcInputVoltage";
+BA_ "SystemSignalLongSymbol" SG_ 932 PCS_a089_hvBusDischargeIrrational "PCS_a089_hvBusDischargeIrrational";
+BA_ "SystemSignalLongSymbol" SG_ 1359 SCCM_a026_parkButtonInvalidSignal "SCCM_a026_parkButtonInvalidSignal";
+BA_ "SystemSignalLongSymbol" SG_ 1359 SCCM_a028_parkButtonShortToGround "SCCM_a028_parkButtonShortToGround";
+BA_ "SystemSignalLongSymbol" SG_ 291 UI_a037_AudioWatchdogXrunStormError "UI_a037_AudioWatchdogXrunStormError";
+BA_ "SystemSignalLongSymbol" SG_ 291 UI_a038_AudioWatchdogA2bI2cLockupError "UI_a038_AudioWatchdogA2bI2cLockupError";
+BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a195_drveBlckdVltgeTooHgh "VCFRONT_a195_drveBlckdVltgeTooHgh";
+BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a205_iBoosterSelfTestFail "VCFRONT_a205_iBoosterSelfTestFail";
+BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a207_vbatFusdSelfTestFail "VCFRONT_a207_vbatFusdSelfTestFail";
+BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a225_driveBlckdByShowroom "VCFRONT_a225_driveBlckdByShowroom";
+BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a226_railAPoweredForFrunk "VCFRONT_a226_railAPoweredForFrunk";
+BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a233_autopilot1EFuseFault "VCFRONT_a233_autopilot1EFuseFault";
+BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a234_autopilot2EFuseFault "VCFRONT_a234_autopilot2EFuseFault";
+BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a236_batTempSnsIrrational "VCFRONT_a236_batTempSnsIrrational";
+BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a252_frontControllerWakeup "VCFRONT_a252_frontControllerWakeup";
+BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a253_maxChrgeSssionTmeouy "VCFRONT_a253_maxChrgeSssionTmeout";
+BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a258_resistanceEstimationRun "VCFRONT_a258_resistanceEstimationRun";
+BA_ "SystemSignalLongSymbol" SG_ 832 VCFRONT_a259_12vVoltageDropOnHighLoadCurrent "VCFRONT_a259_12vVoltageDropOnHighLoadCurrent";
+BA_ "SystemSignalLongSymbol" SG_ 864 VCLEFT_a290_occupancyFaultedFront "VCLEFT_a290_occupancyFaultedFront";
+BA_ "SystemSignalLongSymbol" SG_ 864 VCLEFT_a292_occupancyFaultedRearL "VCLEFT_a292_occupancyFaultedRearL";
+BA_ "SystemSignalLongSymbol" SG_ 864 VCLEFT_a293_occupancyFaultedRearC "VCLEFT_a293_occupancyFaultedRearC";
+BA_ "SystemSignalLongSymbol" SG_ 864 VCLEFT_a294_occupancyFaultedRearR "VCLEFT_a294_occupancyFaultedRearR";
+BA_ "SystemSignalLongSymbol" SG_ 864 VCLEFT_a304_frontIntHandleShorted "VCLEFT_a304_frontIntHandleShorted";
+BA_ "SystemSignalLongSymbol" SG_ 960 VCRIGHT_a180_frontDoorLatchRehome "VCRIGHT_a180_frontDoorLatchRehome";
+BA_ "SystemSignalLongSymbol" SG_ 960 VCRIGHT_a183_doorStateFactoryTets "VCRIGHT_a183_doorStateFactoryTest";
+BA_ "SystemSignalLongSymbol" SG_ 960 VCRIGHT_a215_currentDesyncWarning "VCRIGHT_a215_currentDesyncWarning";
+BA_ "SystemSignalLongSymbol" SG_ 960 VCRIGHT_a267_seatTrackHCEncStlDbg "VCRIGHT_a267_seatTrackHCEncStlDbg";
+BA_ "SystemSignalLongSymbol" SG_ 960 VCRIGHT_a277_BLERightUnderVoltage "VCRIGHT_a277_BLERightUnderVoltage";
+BA_ "SystemSignalLongSymbol" SG_ 960 VCRIGHT_a290_occupancyFaultedFront "VCRIGHT_a290_occupancyFaultedFront";
+BA_ "SystemSignalLongSymbol" SG_ 960 VCRIGHT_a304_frontIntHandleShorted "VCRIGHT_a304_frontIntHandleShorted";
 BA_ "SystemSignalLongSymbol" SG_ 960 VCRIGHT_a305_rearIntHandleShorte "VCRIGHT_a305_rearIntHandleShorted";
-BA_ "SystemSignalLongSymbol" SG_ 1017 VCSEC_a180_wlistRemovedPermissio "VCSEC_a180_wlistRemovedPermission";
-BA_ "SystemSignalLongSymbol" SG_ 1017 VCSEC_a185_passengerEndpointRFMi "VCSEC_a185_passengerEndpointRFMia";
-BA_ "SystemSignalLongSymbol" SG_ 1017 VCSEC_a189_protoExpLengthTooLarg "VCSEC_a189_protoExpLengthTooLarge";
-BA_ "SystemSignalLongSymbol" SG_ 1017 VCSEC_a200_centerEndpointLostCom "VCSEC_a200_centerEndpointLostComm";
-BA_ "SystemSignalLongSymbol" SG_ 1017 VCSEC_a209_BLECenterAssertFailur "VCSEC_a209_BLECenterAssertFailure";
+BA_ "SystemSignalLongSymbol" SG_ 1017 VCSEC_a180_wlistRemovedPermission "VCSEC_a180_wlistRemovedPermission";
+BA_ "SystemSignalLongSymbol" SG_ 1017 VCSEC_a185_passengerEndpointRFMia "VCSEC_a185_passengerEndpointRFMia";
+BA_ "SystemSignalLongSymbol" SG_ 1017 VCSEC_a189_protoExpLengthTooLarge "VCSEC_a189_protoExpLengthTooLarge";
+BA_ "SystemSignalLongSymbol" SG_ 1017 VCSEC_a200_centerEndpointLostComm "VCSEC_a200_centerEndpointLostComm";
+BA_ "SystemSignalLongSymbol" SG_ 1017 VCSEC_a209_BLECenterAssertFailure "VCSEC_a209_BLECenterAssertFailure";
 VAL_ 615 DI_massConfidence 1 "MASS_CONFIDED" 0 "MASS_NOT_CONFIDED" ;
 VAL_ 615 DI_relativeTireTreadDepth -32 "SNA" ;
 VAL_ 615 DI_tireFitment 3 "FITMENT_SNA" 0 "FITMENT_SQUARE" 1 "FITMENT_STAGGERED" ;
