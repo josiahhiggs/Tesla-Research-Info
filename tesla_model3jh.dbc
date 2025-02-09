@@ -1055,6 +1055,15 @@ BO_ 850 BMS_energyStatus: 8 VEH
  SG_ BMS_expectedEnergyRemaining m1 : 32|16@1+ (0.02,0) [0|0] "kWh"  X
  SG_ BMS_energyToChargeComplete m1 : 48|16@1+ (0.02,0) [0|0] "kWh"  X
 
+BO_ 850 ID352BMS_energyStatus: 8 VehicleBus
+ SG_ BMS_energyBuffer : 55|8@1+ (0.1,0) [0|25.4] "KWh"  Receiver
+ SG_ BMS_energyToChargeComplete : 44|11@1+ (0.1,0) [0|204.6] "KWh"  Receiver
+ SG_ BMS_expectedEnergyRemaining : 22|11@1+ (0.1,0) [0|204.6] "KWh"  Receiver
+ SG_ BMS_fullChargeComplete : 63|1@1+ (1,0) [0|1] ""  Receiver
+ SG_ BMS_idealEnergyRemaining : 33|11@1+ (0.1,0) [0|204.6] "KWh"  Receiver
+ SG_ BMS_nominalEnergyRemaining : 11|11@1+ (0.1,0) [0|204.6] "KWh"  Receiver
+ SG_ BMS_nominalFullPackEnergy : 0|11@1+ (0.1,0) [0|204.6] "KWh"  Receiver
+
 BO_ 306 BMS_hvBusStatus: 8 VEH
  SG_ BMS_chgTimeToFull : 48|12@1+ (0.0166667,0) [0|0] "Hours"  X
  SG_ BMS_currentUnfiltered : 32|16@1- (-0.05,822) [0|0] "A"  X
